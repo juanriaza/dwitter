@@ -5,6 +5,7 @@ from django.contrib.auth.models import AbstractUser
 
 class CustomUser(AbstractUser):
     bio = models.CharField(blank=True, max_length=200)
+    followers = models.ManyToManyField("self", blank=True, symmetrical=False, related_name="following")
 
 
 class Tweet(models.Model):
