@@ -1,0 +1,11 @@
+{% extends "website/base.html" %}
+
+
+{% block content %}
+
+<blockquote>
+  <p>{{ tweet.message|lower|capfirst|urlize }}</p>
+  <small>@{{ tweet.user.username }} - {{ tweet.timestamp|timesince }} ago</small>
+</blockquote>
+
+{% endblock %}
